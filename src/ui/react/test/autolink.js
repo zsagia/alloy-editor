@@ -128,7 +128,7 @@
             });
         });
 
-        it('should remove the created link when pressing BACKSPACE', function(done) {
+        it('should remove the created link when pressing BACKSPACE', function() {
             bender.tools.selection.setWithHtml(this.nativeEditor, 'link www.liferay.com { }');
 
             var editable = this.nativeEditor.editable();
@@ -137,17 +137,13 @@
                 keyCode: KEY_SPACE
             });
 
-            setTimeout(function() {
-                happen.keydown(editable.$, {
-                    keyCode: KEY_BACK
-                });
+            happen.keyup(editable.$, {
+                keyCode: KEY_BACK
+            });
 
-                var data = getData.call(this);
+            var data = getData.call(this);
 
-                assert.strictEqual(data, '<p>link www.liferay.com</p>');
-
-                done();
-            }.bind(this), 50);
+            assert.strictEqual(data, '<p>link www.liferay.com</p>');
         });
 
         it('should not remove a link that has not just been created', function() {
@@ -239,9 +235,7 @@
 
             assert.doesNotThrow(
                 function() {
-                    happen.keyup(this._editable, {
-                        keyCode: keyCode
-                    });
+                    happen.keyup(this._editable, {keyCode: keyCode});
                 }.bind(this)
             );
         }
