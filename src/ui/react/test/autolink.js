@@ -137,7 +137,7 @@
                 keyCode: KEY_SPACE
             });
 
-            happen.keydown(editable.$, {
+            happen.keyup(editable.$, {
                 keyCode: KEY_BACK
             });
 
