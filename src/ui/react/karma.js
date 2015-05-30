@@ -141,10 +141,12 @@ if (process.env.SAUCE_USERNAME && process.env.SAUCE_ACCESS_KEY) {
     var customLaunchers = {
         sl_chrome: {
             base: 'SauceLabs',
+            platform: 'Windows 7',
             browserName: 'chrome'
         },
         sl_firefox: {
             base: 'SauceLabs',
+            platform: 'Windows 7',
             browserName: 'firefox'
         },
         sl_ie_9: {
