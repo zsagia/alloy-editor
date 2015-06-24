@@ -29,11 +29,11 @@
             callback = callback || 'CKEDITOR.plugins.oembed.contentLoaded';
 
             var script = document.createElement('script');
-            script.src = '//open.iframe.ly/api/oembed?url=' + encodeURI(url) + '&callback=' + callback + '&origin=ipeychev';
+            script.src = '//open.iframe.ly/api/oembed?url=' + encodeURI(url) + '&callback=' + callback + '&origin=liferay';
             document.body.appendChild(script);
 
             CKEDITOR.plugins.oembed.contentLoaded = CKEDITOR.plugins.oembed.contentLoaded || function(data) {
-                var el = CKEDITOR.dom.element.createFromHtml('<div style="width: 620px; height: 480px;">' + data.html + '</div>');
+                var el = CKEDITOR.dom.element.createFromHtml('<div style="width: 500px; height: 400px;">' + data.html + '</div>');
 
                 editor.insertElement(el);
             };
